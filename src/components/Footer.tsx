@@ -62,7 +62,7 @@ const Linkedin = ({ size = 24 }: { size?: number }) => (
 
 export function Footer() {
   return (
-    <footer className="bg-[var(--nilux-violet-soft)] text-[var(--nilux-ink)] py-16 border-t border-[var(--nilux-violet)]/10">
+    <footer id="contact" className="bg-[var(--nilux-violet-soft)] text-[var(--nilux-ink)] py-16 border-t border-[var(--nilux-violet)]/10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* CTA Band */}
         <motion.div

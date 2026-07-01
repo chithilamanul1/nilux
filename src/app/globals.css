@@ -7,6 +7,9 @@
   --nilux-violet: #2f6fed;
   --nilux-violet-soft: #e8f0fe;
 }
+html {
+  scroll-behavior: smooth;
+}
 body {
   font-family: 'Inter', system-ui, sans-serif;
   color: #0f2a4a;

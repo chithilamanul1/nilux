@@ -1,45 +1,46 @@
 import React from 'react'
+import Link from 'next/link'
 
 export function Header() {
   return (
     <div className="w-full flex justify-center pt-6 px-4 absolute top-0 z-50">
       <header className="w-full max-w-5xl bg-white/90 backdrop-blur-md rounded-full border border-slate-100 shadow-sm px-6 py-3 flex items-center justify-between">
-        <a href="#" className="flex items-center">
+        <Link href="/" className="flex items-center">
           <img
             src="https://cdn.magicpatterns.com/uploads/4ySiuEGuK57yv95KpAgf48/image-removebg-preview_(30).png"
             alt="Nilux — Business Review & Decision Support for SMEs"
             className="h-9 w-auto"
           />
-        </a>
+        </Link>
 
         <nav className="hidden md:flex items-center gap-8 text-sm font-medium text-slate-600">
-          <a href="#" className="text-[var(--nilux-ink)] font-semibold">
+          <Link href="/" className="text-[var(--nilux-ink)] font-semibold">
             Home
-          </a>
-          <a
-            href="#"
+          </Link>
+          <Link
+            href="/#about"
             className="hover:text-[var(--nilux-violet)] transition-colors"
           >
             About Us
-          </a>
-          <a
-            href="#"
+          </Link>
+          <Link
+            href="/#services"
             className="hover:text-[var(--nilux-violet)] transition-colors"
           >
             Services
-          </a>
-          <a
-            href="#"
+          </Link>
+          <Link
+            href="/#tools"
             className="hover:text-[var(--nilux-violet)] transition-colors"
           >
             Tools
-          </a>
-          <a
-            href="#"
+          </Link>
+          <Link
+            href="/#contact"
             className="hover:text-[var(--nilux-violet)] transition-colors"
           >
             Contact
-          </a>
+          </Link>
         </nav>
 
         <div className="flex items-center gap-4">
