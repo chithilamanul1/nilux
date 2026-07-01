@@ -36,7 +36,7 @@ export default async function ServicePage(props: { params: Promise<{ slug: strin
             <div className="absolute top-0 right-0 w-64 h-64 bg-[var(--nilux-violet)] opacity-[0.03] rounded-full blur-3xl -mr-32 -mt-32 pointer-events-none"></div>
             
             <div className="w-16 h-16 bg-[var(--nilux-violet-soft)] rounded-2xl flex items-center justify-center mb-8">
-              {React.cloneElement(service.icon as React.ReactElement, {
+              {React.cloneElement(service.icon as React.ReactElement<{ className?: string }>, {
                 className: 'w-8 h-8 text-[var(--nilux-violet)]',
               })}
             </div>

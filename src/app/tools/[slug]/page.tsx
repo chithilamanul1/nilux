@@ -36,7 +36,7 @@ export default async function ToolPage(props: { params: Promise<{ slug: string }
             <div className="absolute bottom-0 left-0 w-64 h-64 bg-[var(--nilux-ink)] opacity-[0.02] rounded-full blur-3xl -ml-32 -mb-32 pointer-events-none"></div>
             
             <div className="w-16 h-16 bg-[var(--nilux-violet-soft)] rounded-2xl flex items-center justify-center mb-8">
-              {React.cloneElement(tool.icon as React.ReactElement, {
+              {React.cloneElement(tool.icon as React.ReactElement<{ className?: string }>, {
                 className: 'w-8 h-8 text-[var(--nilux-violet)]',
               })}
             </div>

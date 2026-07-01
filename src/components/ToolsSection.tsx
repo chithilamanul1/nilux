@@ -66,7 +66,7 @@ export function ToolsSection() {
                 className="block bg-white p-8 rounded-[2rem] shadow-sm border border-slate-100 hover:shadow-xl hover:-translate-y-1 hover:border-[var(--nilux-violet)]/20 transition-all duration-300 flex flex-col h-full group"
               >
                 <div className="w-12 h-12 bg-[var(--nilux-violet-soft)] rounded-xl flex items-center justify-center mb-6 group-hover:bg-[var(--nilux-violet)] transition-colors duration-300">
-                  {cloneElement(tool.icon as React.ReactElement, {
+                  {cloneElement(tool.icon as React.ReactElement<{ className?: string }>, {
                     className:
                       'w-6 h-6 text-[var(--nilux-violet)] group-hover:text-white transition-colors duration-300',
                   })}

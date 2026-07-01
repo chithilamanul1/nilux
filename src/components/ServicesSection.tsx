@@ -110,7 +110,7 @@ export function ServicesSection() {
                   className="block h-full bg-white border border-slate-100 rounded-[2rem] p-8 hover:border-[var(--nilux-violet)]/30 hover:shadow-xl hover:shadow-[var(--nilux-violet)]/5 transition-all duration-300 group"
                 >
                   <div className="w-12 h-12 bg-[var(--nilux-violet-soft)] rounded-2xl flex items-center justify-center mb-6 group-hover:bg-[var(--nilux-violet)] transition-colors duration-300">
-                    {cloneElement(service.icon as React.ReactElement, {
+                    {cloneElement(service.icon as React.ReactElement<{ className?: string }>, {
                       className:
                         'w-6 h-6 text-[var(--nilux-violet)] group-hover:text-white transition-colors duration-300',
                     })}
