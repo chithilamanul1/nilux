@@ -1,67 +1,42 @@
-import React, { cloneElement } from 'react'
-import {
-  ArrowRight,
-  FileText,
-  Activity,
-  Target,
-  Landmark,
-  Tags,
-  Cog,
-  Wallet,
-  Lightbulb,
-} from 'lucide-react'
+'use client'
 
-const tools = [
-  {
-    icon: <FileText />,
-    title: 'Financial Statement Review',
-    sinhala: 'ලාභ අලාභ ගිණුම සහ තුලන පත්රය සමාලෝචනය',
+import React, { cloneElement } from 'react'
+import Link from 'next/link'
+import { motion } from 'framer-motion'
+import { ArrowRight } from 'lucide-react'
+import { toolsData } from '@/data/tools'
+
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.1,
+    },
   },
-  {
-    icon: <Activity />,
-    title: 'Cash Flow Analyzer',
-    sinhala: 'ව්යාපාරයේ මුදල් ප්රවාහය විශ්ලේෂණය කිරීම',
+}
+
+const itemVariants = {
+  hidden: { opacity: 0, scale: 0.95, y: 10 },
+  visible: { 
+    opacity: 1, 
+    scale: 1, 
+    y: 0, 
+    transition: { type: 'spring', stiffness: 100, damping: 15 } 
   },
-  {
-    icon: <Target />,
-    title: 'SWOT Review',
-    sinhala: 'ව්යාපාරයේ ශක්තීන්, දුර්වලතා, අවස්ථා සහ අවදානම් හඳුනා ගැනීම',
-  },
-  {
-    icon: <Landmark />,
-    title: 'Loan Readiness Score',
-    sinhala:
-      'බැංකු ණයක් හෝ වෙනත් මූල්ය පහසුකමක් ලබා ගැනීමට ව්යාපාරය සූදානම්ද යන්න බැලීම',
-  },
-  {
-    icon: <Tags />,
-    title: 'Pricing & Margin Review',
-    sinhala: 'මිල නියම කිරීම සහ ලාභ ප්රතිශතය ප්රමාණවත්ද යන්න සමාලෝචනය',
-  },
-  {
-    icon: <Cog />,
-    title: 'Operational Review',
-    sinhala:
-      'ව්යාපාර මෙහෙයුම් ඇගයීමට ලක් කර කාර්යක්ෂමතාව වැඩිදියුණු කළ හැකි අවස්ථා හඳුනා ගැනීම',
-  },
-  {
-    icon: <Wallet />,
-    title: 'Working Capital Review',
-    sinhala: 'ක්රියාකාරී ප්රාග්ධනය කාර්යක්ෂමව කළමනාකරණය වේද යන්න සමාලෝචනය',
-  },
-  {
-    icon: <Lightbulb />,
-    title: 'Business Decision Review',
-    sinhala:
-      'වැදගත් ව්යාපාරික තීරණයක් ගැනීමට පෙර එහි වාසි, අවදානම් සහ විකල්ප ඇගයීමට ලක් කිරීම',
-  },
-]
+}
 
 export function ToolsSection() {
   return (
     <section className="py-24 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-100px' }}
+          transition={{ duration: 0.6 }}
+          className="text-center mb-16"
+        >
           <div className="inline-flex items-center justify-center px-4 py-1.5 mb-6 rounded-full bg-[var(--nilux-violet-soft)] text-[var(--nilux-violet)] text-sm font-semibold tracking-wide">
             Review Tools
           </div>
@@ -75,32 +50,40 @@ export function ToolsSection() {
             A comprehensive suite of business review tools designed to provide
             clarity and actionable insights for your SME.
           </p>
-        </div>
+        </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {tools.map((tool, index) => (
-            <div
-              key={index}
-              className="bg-white p-8 rounded-[2rem] shadow-sm border border-slate-100 hover:shadow-xl hover:-translate-y-1 hover:border-[var(--nilux-violet)]/20 transition-all duration-300 flex flex-col h-full group"
-            >
-              <div className="w-12 h-12 bg-[var(--nilux-violet-soft)] rounded-xl flex items-center justify-center mb-6 group-hover:bg-[var(--nilux-violet)] transition-colors duration-300">
-                {cloneElement(tool.icon, {
-                  className:
-                    'w-6 h-6 text-[var(--nilux-violet)] group-hover:text-white transition-colors duration-300',
-                })}
-              </div>
-              <h3 className="font-bold text-[var(--nilux-ink)] text-lg mb-3">
-                {tool.title}
-              </h3>
-              <p className="font-sinhala text-sm text-slate-600 mb-8 flex-grow">
-                {tool.sinhala}
-              </p>
-              <button className="text-[var(--nilux-violet)] text-sm font-semibold flex items-center gap-2 group-hover:gap-3 transition-all duration-300 mt-auto">
-                More Details <ArrowRight className="w-4 h-4" />
-              </button>
-            </div>
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: '-50px' }}
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
+        >
+          {toolsData.map((tool, index) => (
+            <motion.div key={index} variants={itemVariants} className="h-full">
+              <Link
+                href={`/tools/${tool.slug}`}
+                className="block bg-white p-8 rounded-[2rem] shadow-sm border border-slate-100 hover:shadow-xl hover:-translate-y-1 hover:border-[var(--nilux-violet)]/20 transition-all duration-300 flex flex-col h-full group"
+              >
+                <div className="w-12 h-12 bg-[var(--nilux-violet-soft)] rounded-xl flex items-center justify-center mb-6 group-hover:bg-[var(--nilux-violet)] transition-colors duration-300">
+                  {cloneElement(tool.icon as React.ReactElement, {
+                    className:
+                      'w-6 h-6 text-[var(--nilux-violet)] group-hover:text-white transition-colors duration-300',
+                  })}
+                </div>
+                <h3 className="font-bold text-[var(--nilux-ink)] text-lg mb-3">
+                  {tool.title}
+                </h3>
+                <p className="font-sinhala text-sm text-slate-600 mb-8 flex-grow">
+                  {tool.sinhala}
+                </p>
+                <div className="text-[var(--nilux-violet)] text-sm font-semibold flex items-center gap-2 group-hover:gap-3 transition-all duration-300 mt-auto">
+                  More Details <ArrowRight className="w-4 h-4" />
+                </div>
+              </Link>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   )

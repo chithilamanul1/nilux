@@ -1,12 +1,21 @@
+'use client'
+
 import React from 'react'
+import { motion } from 'framer-motion'
 
 export function FounderSection() {
   return (
-    <section className="py-24 bg-white relative">
+    <section className="py-24 bg-white relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           {/* Left side - Image & Stats */}
-          <div className="relative">
+          <motion.div
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, margin: '-100px' }}
+            transition={{ duration: 0.8, ease: 'easeOut' }}
+            className="relative"
+          >
             <div className="inline-flex items-center justify-center px-4 py-1.5 mb-6 rounded-full bg-[var(--nilux-violet-soft)] text-[var(--nilux-violet)] text-sm font-semibold tracking-wide">
               About Us
             </div>
@@ -52,10 +61,16 @@ export function FounderSection() {
                 </span>
               </div>
             </div>
-          </div>
+          </motion.div>
 
           {/* Right side - Bio */}
-          <div className="bg-white rounded-[2.5rem] p-8 md:p-12 border border-slate-100 shadow-[0_20px_50px_-12px_rgba(0,0,0,0.05)] relative">
+          <motion.div
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, margin: '-100px' }}
+            transition={{ duration: 0.8, ease: 'easeOut', delay: 0.2 }}
+            className="bg-white rounded-[2.5rem] p-8 md:p-12 border border-slate-100 shadow-[0_20px_50px_-12px_rgba(0,0,0,0.05)] relative"
+          >
             <div className="absolute top-0 right-0 w-32 h-32 bg-[var(--nilux-violet-soft)] rounded-bl-[5rem] rounded-tr-[2.5rem] -z-10"></div>
 
             <div className="flex items-center gap-6 mb-8">
@@ -120,7 +135,7 @@ export function FounderSection() {
                 />
               </svg>
             </button>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

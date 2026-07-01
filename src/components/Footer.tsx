@@ -1,4 +1,7 @@
+'use client'
+
 import React from 'react'
+import { motion } from 'framer-motion'
 import {
   Mail,
   Phone,
@@ -13,7 +16,13 @@ export function Footer() {
     <footer className="bg-[var(--nilux-violet-soft)] text-[var(--nilux-ink)] py-16 border-t border-[var(--nilux-violet)]/10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* CTA Band */}
-        <div className="bg-white rounded-[2.5rem] p-10 md:p-14 flex flex-col md:flex-row items-center justify-between gap-8 mb-16 shadow-sm border border-white">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-50px' }}
+          transition={{ duration: 0.6 }}
+          className="bg-white rounded-[2.5rem] p-10 md:p-14 flex flex-col md:flex-row items-center justify-between gap-8 mb-16 shadow-sm border border-white"
+        >
           <div>
             <h3 className="font-display text-3xl font-bold mb-2">
               Ready to bring your dreams to life?
@@ -23,7 +32,7 @@ export function Footer() {
           <button className="bg-[var(--nilux-ink)] text-white px-8 py-4 rounded-full font-semibold hover:bg-black transition-all duration-300 whitespace-nowrap">
             Contact Us Now
           </button>
-        </div>
+        </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
           <div className="lg:col-span-2">
