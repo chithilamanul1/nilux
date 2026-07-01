@@ -36,7 +36,7 @@ export function Header() {
             Tools
           </Link>
           <Link
-            href="/#contact"
+            href="/contact"
             className="hover:text-[var(--nilux-violet)] transition-colors"
           >
             Contact
