@@ -76,7 +76,7 @@ export function Hero() {
             className="col-span-1 md:col-span-1 h-64 rounded-3xl overflow-hidden shadow-lg"
           >
             <img
-              src="https://images.unsplash.com/photo-1556761175-5973dc0f32d7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+              src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
               alt="Business meeting"
               className="w-full h-full object-cover"
             />

@@ -1,11 +1,5 @@
 import type { Metadata } from "next";
-import localFont from "next/font/local";
 import "./globals.css";
-
-const maname = localFont({
-  src: "../../public/font.ttf",
-  variable: "--font-maname",
-});
 
 export const metadata: Metadata = {
   title: "Nilux — Business Review & Decision Support for SMEs",
@@ -18,7 +12,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={maname.variable}>
+    <html lang="en">
       <body>{children}</body>
     </html>
   );
