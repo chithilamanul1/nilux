@@ -76,8 +76,8 @@ export default function ContactPage() {
     const waUrl = `https://wa.me/94777032554?text=${waMessage}`
 
     try {
-      // You can add this URL to your .env.local file once you create the Google Apps Script
-      const scriptUrl = process.env.NEXT_PUBLIC_GOOGLE_SCRIPT_URL
+      // Direct URL to the Google Apps Script Web App
+      const scriptUrl = 'https://script.google.com/macros/s/AKfycbyEVHY-UA5kVgqDuvGehUGwUs3g-nUZL1LPHv7VHNsH1DXvuoMBYOxFTsfnoOsas7wnfQ/exec'
       
       if (scriptUrl) {
         const formDataObj = new FormData()
