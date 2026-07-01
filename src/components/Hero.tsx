@@ -7,17 +7,16 @@ import { ArrowRight } from 'lucide-react'
 export function Hero() {
   return (
     <section className="relative w-full bg-[#fcfaff] pt-36 pb-24 overflow-hidden">
-      {/* Background wavy pattern placeholder */}
-      <motion.div
-        initial={{ opacity: 0, scale: 0.9 }}
-        animate={{ opacity: 0.2, scale: 1 }}
-        transition={{ duration: 1.5 }}
-        className="absolute inset-0 pointer-events-none"
-        style={{
-          backgroundImage:
-            'radial-gradient(circle at 50% 50%, var(--nilux-violet-soft) 0%, transparent 50%)',
-        }}
-      ></motion.div>
+      {/* Modern animated background */}
+      <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:32px_32px]"></div>
+        <motion.div
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 0.4, scale: 1 }}
+          transition={{ duration: 2, ease: "easeOut" }}
+          className="absolute left-0 right-0 top-[-10%] -z-10 m-auto h-[500px] w-[500px] rounded-full bg-[var(--nilux-violet)] blur-[130px]"
+        ></motion.div>
+      </div>
 
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
         <motion.div
