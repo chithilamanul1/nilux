@@ -2,11 +2,11 @@
 
 import React, { cloneElement } from 'react'
 import Link from 'next/link'
-import { motion } from 'framer-motion'
+import { motion, Variants } from 'framer-motion'
 import { ArrowRight } from 'lucide-react'
 import { toolsData } from '@/data/tools'
 
-const containerVariants = {
+const containerVariants: Variants = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
@@ -16,7 +16,7 @@ const containerVariants = {
   },
 }
 
-const itemVariants = {
+const itemVariants: Variants = {
   hidden: { opacity: 0, scale: 0.95, y: 10 },
   visible: { 
     opacity: 1, 
