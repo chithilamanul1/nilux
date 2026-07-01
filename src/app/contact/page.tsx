@@ -68,14 +68,43 @@ export default function ContactPage() {
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [submitted, setSubmitted] = useState(false)
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setIsSubmitting(true)
-    // Simulate form submission
-    setTimeout(() => {
+
+    const waMessage = `Hello, I'm ${formData.name}. %0A%0AEmail: ${formData.email} %0APhone: ${formData.phone} %0A%0AMessage: ${formData.message}`
+    const waUrl = `https://wa.me/94777032554?text=${waMessage}`
+
+    try {
+      // You can add this URL to your .env.local file once you create the Google Apps Script
+      const scriptUrl = process.env.NEXT_PUBLIC_GOOGLE_SCRIPT_URL
+      
+      if (scriptUrl) {
+        const formDataObj = new FormData()
+        formDataObj.append('name', formData.name)
+        formDataObj.append('phone', formData.phone)
+        formDataObj.append('email', formData.email)
+        formDataObj.append('message', formData.message)
+
+        await fetch(scriptUrl, {
+          method: 'POST',
+          body: formDataObj,
+          mode: 'no-cors'
+        })
+      }
+
       setIsSubmitting(false)
       setSubmitted(true)
-    }, 1500)
+      
+      // Open WhatsApp in a new tab
+      window.open(waUrl, '_blank')
+    } catch (error) {
+      console.error('Error submitting form', error)
+      setIsSubmitting(false)
+      setSubmitted(true)
+      // Fallback: still open WA if sheet fails
+      window.open(waUrl, '_blank')
+    }
   }
 
   const handleChange = (
@@ -278,7 +307,7 @@ export default function ContactPage() {
                       Call Us Directly
                     </p>
                     <p className="text-lg font-bold text-[var(--nilux-ink)]">
-                      +94 77 123 4567
+                      +94 77 703 2554
                     </p>
                     <p className="text-sm text-slate-600 font-sinhala mt-1">
                       (සඳුදා - සෙනසුරාදා: උදේ 9.00 - සවස 6.00)

@@ -3,6 +3,7 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import { ArrowRight } from 'lucide-react'
+import Link from 'next/link'
 
 export function Hero() {
   return (
@@ -57,14 +58,14 @@ export function Hero() {
           transition={{ duration: 0.6, delay: 0.3 }}
           className="flex flex-col sm:flex-row gap-4 justify-center mb-20"
         >
-          <button className="bg-[var(--nilux-ink)] text-white px-8 py-3.5 rounded-full font-semibold hover:bg-black transition-all duration-300 flex items-center justify-center gap-2 group">
+          <Link href="/contact" className="bg-[var(--nilux-ink)] text-white px-8 py-3.5 rounded-full font-semibold hover:bg-black transition-all duration-300 flex items-center justify-center gap-2 group">
             Get Started
             <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-          </button>
-          <button className="bg-white text-[var(--nilux-ink)] border border-slate-200 px-8 py-3.5 rounded-full font-semibold hover:bg-slate-50 transition-all duration-300 flex items-center justify-center gap-2">
+          </Link>
+          <Link href="/#about" className="bg-white text-[var(--nilux-ink)] border border-slate-200 px-8 py-3.5 rounded-full font-semibold hover:bg-slate-50 transition-all duration-300 flex items-center justify-center gap-2">
             Learn More
             <ArrowRight className="w-4 h-4" />
-          </button>
+          </Link>
         </motion.div>
 
         {/* Image Grid */}

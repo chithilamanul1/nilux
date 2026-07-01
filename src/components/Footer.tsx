@@ -2,6 +2,7 @@
 
 import React from 'react'
 import { motion } from 'framer-motion'
+import Link from 'next/link'
 import {
   Mail,
   Phone,
@@ -78,9 +79,9 @@ export function Footer() {
             </h3>
             <p className="text-slate-600">Let's get started Today</p>
           </div>
-          <button className="bg-[var(--nilux-ink)] text-white px-8 py-4 rounded-full font-semibold hover:bg-black transition-all duration-300 whitespace-nowrap">
+          <Link href="/contact" className="bg-[var(--nilux-ink)] text-white px-8 py-4 rounded-full font-semibold hover:bg-black transition-all duration-300 whitespace-nowrap">
             Contact Us Now
-          </button>
+          </Link>
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
@@ -117,7 +118,9 @@ export function Footer() {
                 <Instagram size={18} />
               </a>
               <a
-                href="#"
+                href="https://wa.me/94777032554"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-10 h-10 rounded-full bg-white flex items-center justify-center text-[var(--nilux-ink)] hover:bg-[#25D366] hover:text-white transition-colors shadow-sm"
               >
                 <svg
@@ -139,7 +142,7 @@ export function Footer() {
                   size={18}
                   className="text-[var(--nilux-violet)] shrink-0 mt-0.5"
                 />
-                <span>+94 77 123 4567</span>
+                <span>+94 77 703 2554</span>
               </li>
               <li className="flex items-start gap-3">
                 <Mail
@@ -198,10 +201,15 @@ export function Footer() {
         </div>
 
         <div className="pt-8 border-t border-[var(--nilux-violet)]/10 text-sm text-slate-500 text-center md:text-left flex flex-col md:flex-row justify-between items-center gap-4">
-          <p>
-            © {new Date().getFullYear()} Nilux Business Advisory. All rights
-            reserved.
-          </p>
+          <div className="flex flex-col md:flex-row items-center gap-2 md:gap-4">
+            <p>
+              © {new Date().getFullYear()} Nilux Business Advisory. All rights reserved.
+            </p>
+            <p className="hidden md:block text-slate-300">|</p>
+            <p>
+              Made by <a href="https://seranex.lk" target="_blank" rel="noopener noreferrer" className="font-semibold text-[var(--nilux-ink)] hover:text-[var(--nilux-violet)] transition-colors">seranex.lk</a> (+94728382638) • Love by chithila manul
+            </p>
+          </div>
           <div className="flex gap-6">
             <a
               href="#"
