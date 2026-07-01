@@ -3,7 +3,7 @@ import localFont from "next/font/local";
 import "./globals.css";
 
 const maname = localFont({
-  src: "../../public/maname.ttf",
+  src: "../../public/font.ttf",
   variable: "--font-maname",
 });
 
