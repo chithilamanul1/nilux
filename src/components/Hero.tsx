@@ -33,13 +33,13 @@ export function Hero() {
         <motion.h1
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.1 }}
-          className="font-display text-5xl md:text-6xl lg:text-7xl font-bold text-[var(--nilux-ink)] leading-[1.1] mb-6"
+          transition={{ duration: 0.8, delay: 0.2 }}
+          className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-[5.5rem] font-bold text-[var(--nilux-ink)] leading-[1.15] tracking-tight mb-8"
         >
           Empowering Sri Lankan{' '}
           <span className="text-[var(--nilux-violet)]">SMEs</span> to Build{' '}
           <br className="hidden md:block" />
-          Better <span className="font-vine font-normal text-[1.4em] text-[var(--nilux-violet)] pr-2 relative top-2">Businesses</span>
+          Better <span className="font-vine font-normal text-[1.2em] md:text-[1.4em] text-[var(--nilux-violet)] pr-2 relative top-2 inline-block mt-2 md:mt-0">Businesses</span>
         </motion.h1>
 
         <motion.p
