@@ -87,12 +87,12 @@ export function ServicesSection() {
               </ul>
             </div>
 
-            <button className="relative z-10 w-full bg-[var(--nilux-ink)] hover:bg-black text-white rounded-full p-4 font-semibold transition-all duration-300 shadow-lg flex flex-col items-center justify-center gap-1 group">
+            <Link href="/contact" className="relative z-10 w-full bg-[var(--nilux-ink)] hover:bg-black text-white rounded-2xl p-4 font-semibold transition-all duration-300 shadow-lg flex flex-col items-center justify-center gap-1 group text-center">
               <span>Reserve Your First Session - FREE</span>
               <span className="font-sinhala text-xs opacity-80 group-hover:opacity-100">
                 පළමු හමුව වෙන් කරගන්න - නොමිලේ
               </span>
-            </button>
+            </Link>
           </motion.div>
 
           {/* Services Grid */}
