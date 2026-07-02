@@ -75,16 +75,11 @@ export function FounderSection() {
 
             <div className="flex items-center gap-6 mb-8">
               <div className="w-20 h-20 shrink-0 rounded-full bg-slate-200 border-4 border-white shadow-md overflow-hidden relative">
-                {/* Placeholder for photo */}
-                <div className="absolute inset-0 flex items-center justify-center text-slate-400 bg-slate-100">
-                  <svg
-                    className="w-10 h-10"
-                    fill="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path d="M24 20.993V24H0v-2.996A14.977 14.977 0 0112.004 15c4.904 0 9.26 2.354 11.996 5.993zM16.002 8.999a4 4 0 11-8 0 4 4 0 018 0z" />
-                  </svg>
-                </div>
+                <img 
+                  src="/founder.jpg" 
+                  alt="Nirosh R. Gunawardana" 
+                  className="w-full h-full object-cover"
+                />
               </div>
               <div>
                 <h3 className="font-display text-2xl font-bold text-[var(--nilux-ink)]">
