@@ -39,7 +39,7 @@ export function Hero() {
           Empowering Sri Lankan{' '}
           <span className="text-[var(--nilux-violet)]">SMEs</span> to Build{' '}
           <br className="hidden md:block" />
-          Better <span className="font-vine font-bold text-[1.4em] text-[var(--nilux-violet)] pr-2 relative top-2">Businesses</span>
+          Better <span className="font-vine font-normal text-[1.4em] text-[var(--nilux-violet)] pr-2 relative top-2">Businesses</span>
         </motion.h1>
 
         <motion.p
