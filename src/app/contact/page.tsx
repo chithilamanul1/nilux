@@ -63,6 +63,8 @@ export default function ContactPage() {
     name: '',
     email: '',
     phone: '',
+    category: '',
+    reason: '',
     message: '',
   })
   const [isSubmitting, setIsSubmitting] = useState(false)
@@ -72,7 +74,7 @@ export default function ContactPage() {
     e.preventDefault()
     setIsSubmitting(true)
 
-    const waMessage = `Hello, I'm ${formData.name}. %0A%0AEmail: ${formData.email} %0APhone: ${formData.phone} %0A%0AMessage: ${formData.message}`
+    const waMessage = `Hello, I'm ${formData.name}. %0A%0AEmail: ${formData.email} %0APhone: ${formData.phone} %0A%0ABusiness Category: ${formData.category} %0AReason for Consultation: ${formData.reason} %0A%0AMessage: ${formData.message}`
     const waUrl = `https://wa.me/94777032554?text=${waMessage}`
 
     try {
@@ -84,6 +86,8 @@ export default function ContactPage() {
         formDataObj.append('name', formData.name)
         formDataObj.append('phone', formData.phone)
         formDataObj.append('email', formData.email)
+        formDataObj.append('category', formData.category)
+        formDataObj.append('reason', formData.reason)
         formDataObj.append('message', formData.message)
 
         await fetch(scriptUrl, {
@@ -108,7 +112,7 @@ export default function ContactPage() {
   }
 
   const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
   ) => {
     setFormData((prev) => ({
       ...prev,
@@ -247,6 +251,57 @@ export default function ContactPage() {
                       className="w-full px-5 py-3 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:border-[var(--nilux-violet)] focus:ring-2 focus:ring-[var(--nilux-violet)]/20 outline-none transition-all duration-300"
                       placeholder="john@example.com"
                     />
+                  </div>
+
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div className="space-y-2">
+                      <label
+                        htmlFor="category"
+                        className="text-sm font-semibold text-[var(--nilux-ink)]"
+                      >
+                        Business Category
+                      </label>
+                      <select
+                        id="category"
+                        name="category"
+                        required
+                        value={formData.category}
+                        onChange={handleChange}
+                        className="w-full px-5 py-3 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:border-[var(--nilux-violet)] focus:ring-2 focus:ring-[var(--nilux-violet)]/20 outline-none transition-all duration-300 appearance-none"
+                      >
+                        <option value="" disabled>Select a category</option>
+                        <option value="Retail & E-commerce">Retail & E-commerce</option>
+                        <option value="Manufacturing & Production">Manufacturing & Production</option>
+                        <option value="Services & Hospitality">Services & Hospitality</option>
+                        <option value="Technology & IT">Technology & IT</option>
+                        <option value="Agriculture & Export">Agriculture & Export</option>
+                        <option value="Other">Other</option>
+                      </select>
+                    </div>
+                    <div className="space-y-2">
+                      <label
+                        htmlFor="reason"
+                        className="text-sm font-semibold text-[var(--nilux-ink)]"
+                      >
+                        Reason for Consultation
+                      </label>
+                      <select
+                        id="reason"
+                        name="reason"
+                        required
+                        value={formData.reason}
+                        onChange={handleChange}
+                        className="w-full px-5 py-3 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:border-[var(--nilux-violet)] focus:ring-2 focus:ring-[var(--nilux-violet)]/20 outline-none transition-all duration-300 appearance-none"
+                      >
+                        <option value="" disabled>Select a reason</option>
+                        <option value="Business Growth & Scaling">Business Growth & Scaling</option>
+                        <option value="Financial Planning & Review">Financial Planning & Review</option>
+                        <option value="Marketing & Sales Strategy">Marketing & Sales Strategy</option>
+                        <option value="Operational Efficiency">Operational Efficiency</option>
+                        <option value="Startup Guidance">Startup Guidance</option>
+                        <option value="Other">Other</option>
+                      </select>
+                    </div>
                   </div>
 
                   <div className="space-y-2">
