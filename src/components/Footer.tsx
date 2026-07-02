@@ -211,18 +211,18 @@ export function Footer() {
             </p>
           </div>
           <div className="flex gap-6">
-            <a
-              href="#"
+            <Link
+              href="/privacy-policy"
               className="hover:text-[var(--nilux-violet)] transition-colors"
             >
               Privacy Policy
-            </a>
-            <a
-              href="#"
+            </Link>
+            <Link
+              href="/terms-of-service"
               className="hover:text-[var(--nilux-violet)] transition-colors"
             >
               Terms of Service
-            </a>
+            </Link>
           </div>
         </div>
       </div>
